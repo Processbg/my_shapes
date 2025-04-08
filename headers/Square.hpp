@@ -21,7 +21,10 @@ inline Square<T>::Square(const Square<T>& other): Rectangle<T>(other)
 template<class T>
 inline Square<T>& Square<T>::operator=(const Square<T>& other)
 {
-    copy(other);
+    if (this != &other)
+    {
+        copy(other);
+    }
     
     return *this;
 }
@@ -29,10 +32,7 @@ inline Square<T>& Square<T>::operator=(const Square<T>& other)
 template<class T>
 inline void Square<T>::copy(const Square<T>& other)
 {
-    if (this != &other)
-    {
-        side = other.side;
-    }
+    side = other.side;
 }
 
 template<class T>

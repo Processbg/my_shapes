@@ -21,8 +21,11 @@ inline Rectangle<T>::Rectangle(const Rectangle<T>& other)
 template<class T>
 inline Rectangle<T>& Rectangle<T>::operator=(const Rectangle<T>& other)
 {
-    copy(other);
-
+    if (this != &other)
+    {
+        copy(other);
+    }
+    
     return *this;
 }
 
@@ -41,11 +44,8 @@ inline T Rectangle<T>::area() const
 template<class T>
 inline void Rectangle<T>::copy(const Rectangle<T>& other)
 {
-    if (this != &other)
-    {
-        height = other.height;
-        widght = other.widght;
-    }
+    height = other.height;
+    widght = other.widght;
 }
 
 template<class T>

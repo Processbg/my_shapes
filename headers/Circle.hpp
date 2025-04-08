@@ -23,18 +23,18 @@ inline Circle<T>::Circle(const Circle<T>& other)
 template<class T>
 inline Circle<T>& Circle<T>::operator=(const Circle<T>& other)
 {
-    copy(other);
-
+    if (this != &other)
+    {
+        copy(other);
+    }
+    
     return *this;
 }
 
 template<class T>
 inline void Circle<T>::copy(const Circle<T>& other)
 {
-    if (this != &other)
-    {
-        radius = other.radius;
-    }
+    radius = other.radius;
 }
 
 template<class T>
