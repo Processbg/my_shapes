@@ -24,7 +24,10 @@ inline Triangle<T>::Triangle(const Triangle<T>& other)
 template<class T>
 inline Triangle<T>& Triangle<T>::operator=(const Triangle<T>& other)
 {
-    copy(other);
+    if (this != &other)
+    {
+        copy(other);
+    }
 
     return *this;
 }
@@ -32,12 +35,9 @@ inline Triangle<T>& Triangle<T>::operator=(const Triangle<T>& other)
 template<class T>
 inline void Triangle<T>::copy(const Triangle<T>& other)
 {
-    if (this != &other)
-    {
-        a = other.a;
-        b = other.b;
-        c = other.c;
-    }
+    a = other.a;
+    b = other.b;
+    c = other.c;
 }
 
 template<class T>
