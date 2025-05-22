@@ -2,6 +2,7 @@
 #include <unordered_map>
 #include <cstring>
 #include <cstdio>
+#include <new>
 
 #include "../headers/Shape.h"
 #include "../headers/Rectangle.h"
@@ -89,12 +90,12 @@ int main(int argc, char* argv[])
 
     if (!strcmp(userInputShape, "--help"))
     {
-        std::cout << argv[0] << " please choose one of these shapes: triangle, rectangle, circle or square.\n";
+        std::cout << argv[0] << "\nPlease choose one of these shapes: triangle, rectangle, circle or square.\n";
         std::cout << "Followed by the dimentions of the desired shape.\n"; 
-        std::cout << "Example for rectangle 10 100 0.\n";
-        std::cout << "Example for sqaure 14 0 0.\n";
-        std::cout << "Example for triangle 12 15 23.\n";
-        std::cout << "Example for circle 11 0 0.\n";
+        std::cout << "Example for:\nrectangle\n10 100 0\n";
+        std::cout << "Example for:\nsqaure\n14 0 0\n";
+        std::cout << "Example for:\ntriangle\n12 15 23\n";
+        std::cout << "Example for:\ncircle\n11 0 0\n";
         delete[] userInputShape;
         return 0;
     }
